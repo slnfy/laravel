@@ -59,3 +59,17 @@ Route::get('datadiri/{nama}/{alamat}/{sekolah}/{umur}' ,function($a,$b,$c,$d)
            '<br>Umur Saya '.$d
     ;
 });
+
+//Route optional parameter
+Route::get('pesan/{a?}/{b?}' ,function($mkn=null,$mnm=null)
+{
+   if (isset($mkn)) {
+       $mkn = "Anda memesan $mkn";
+       echo $mkn;
+   }
+   if (!$mkn && !$mnm)
+       return "Anda belum memesan sesuatu";
+
+
+
+});
