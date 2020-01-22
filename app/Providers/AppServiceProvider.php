@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+//import class schema
+
 
 class AppServiceProvider extends ServiceProvider
 {
