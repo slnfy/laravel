@@ -152,6 +152,50 @@ Route::get('tni/{nama?}/{bb?}/{umur}' ,function($nm=null,$bb=null,$umur=null)
 });
 
 
+//Mencari Semua Model post
+Route::get('testmodel', function()
+{
+$query = App\post::all();
+return $query;
+});
+
+//Mencari Model Berdasarkan Id post
+Route::get('testmodel/2', function()
+{
+$query = App\post::find(1);
+return $query;
+});
+
+//Mencari Model Berdasarkan title post
+Route::get('testmodel/3', function()
+{
+$query = App\post::where('title','like','%Cepat Menikah%')->get();
+return $query;
+});
+
+//Mengubah record, (hapus semua isi function)
+Route::get('testmodel/4', function()
+{
+$post = App\post::find(1);
+$post->title = "Ciri Keluarga Sakinah";
+$post->save();
+return $post;
+});
+
+//Menghapus record, (hapus semua isi function)
+Route::get('testmodel/5', function()
+{
+$post = App\post::find(1);
+$post->delete();
+});
 
 
-
+//Menambah record, (hapus semua isi function)
+Route::get('testmodel/6', function()
+{
+$post = new App\post;
+$post->title = "7 Amalan Pembuka Jodoh";
+$post->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, tobat";
+$post->save();
+return $post;
+});
