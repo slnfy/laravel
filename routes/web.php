@@ -199,3 +199,18 @@ $post->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, 
 $post->save();
 return $post;
 });
+
+
+//akses model biodata
+Route::get('modeltugas', function()
+{
+$query = App\Tugas::all()->take(3);
+return $query;
+});
+
+//akses melihat 1 record 3 field
+Route::get('modeltugas/2', function()
+{
+    $query = App/Tugas::select('nama_kayawan','no_ktp','jenis_kelamin',
+    'alamat_karyawan','tanggal_lahir','agama','jabatan')->first();
+});
