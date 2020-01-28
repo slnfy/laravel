@@ -214,3 +214,10 @@ Route::get('modeltugas/2', function()
     $query = App/Tugas::select('nama_kayawan','no_ktp','jenis_kelamin',
     'alamat_karyawan','tanggal_lahir','agama','jabatan')->first();
 });
+
+Route::get('latihan1/{a?}/{b?}', 'LatihanController@pertambahan');
+Route::get('latihan2/{a?}/{b?}', 'LatihanController@perkurangan');
+Route::get('latihan3/{a?}/{b?}', 'LatihanController@pembagian');
+Route::get('latihan4/{a?}/{b?}', 'LatihanController@perkalian');
+Route::get('latihan5/{a?}/{b?}', 'LatihanController@tambah');
+Route::get('/data-1', 'LatihanController@loop');
