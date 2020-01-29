@@ -221,3 +221,19 @@ Route::get('latihan3/{a?}/{b?}', 'LatihanController@pembagian');
 Route::get('latihan4/{a?}/{b?}', 'LatihanController@perkalian');
 Route::get('latihan5/{a?}/{b?}', 'LatihanController@tambah');
 Route::get('/data-1', 'LatihanController@loop');
+Route::get('/data-2', 'LatihanController@karyawan');
+
+
+// CRUD TABUNGAN
+Route::get('tabungan','TabunganController@index');
+Route::get('tabungan/{id}','TabunganController@show');
+Route::get('tabungan-tambah/{id}/{nis}/{nama}/{kelas}/{jml}','TabunganController@store');
+Route::get('tabungan-update/{id}/{nis}/{nama}/{kelas}/{jml}','TabunganController@edit');
+Route::get('tabungan-hapus/{id}','TabunganController@delete');
+
+// CRUD CUSTOMER
+Route::get('customer','CustomerController@index');
+Route::get('customer/{id}','CustomerController@show');
+Route::get('customer-tambah/{code_customer}/{email}/{country}/{city}/{address}/{contact_number }','CustomerController@store');
+Route::get('customer-update/{id}/{nis}/{nama}/{kelas}/{jml}','CustomerController@edit');
+Route::get('customer-hapus/{id}','CustomerController@delete');
