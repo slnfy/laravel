@@ -27,4 +27,10 @@ class PracticeController extends Controller
         return view('latihan2',compact('tabungan'));
     }
 
+    public function pass3($id)
+    {
+        $tabungan = Tabungan::findOrFail($id);
+        return view('latihan3',compact('tabungan'));
+    }
+
 }
